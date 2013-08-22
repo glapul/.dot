@@ -1,10 +1,11 @@
 startup_message off
+attrcolor b ".I"    # allow bold colors - necessary for some reason
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+defbce on    # use current bg color for erased chars
 caption always "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %= %c %d/%m/%Y"
-bindkey ^[, prev
-bindkey ^[; next
 shelltitle ""
 autodetach on
-defscrollback 65000
 altscreen on
-term screen-256color
+defscrollback 65000
+term "xterm-256color"
 shell "/usr/bin/zsh"

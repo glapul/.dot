@@ -13,3 +13,5 @@ autoload -U ~/.zsh/functions/*(:t)
 . ~/.zsh/bindings
 
 . ~/.zshrc.local
+export TERM=xterm-256color
+
