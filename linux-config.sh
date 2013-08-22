@@ -1,4 +1,4 @@
-sudo apt-get -y install  git-core pidgin vim-gnome python ruby g++ zsh screen curl wget gnome-terminal pypy ttf-inconsolata libxss1 dropbox
+sudo apt-get -y install  git-core pidgin vim-gnome python ruby ruby-dev g++ zsh screen curl wget gnome-terminal pypy ttf-inconsolata libxss1 dropbox
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome*.deb
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
