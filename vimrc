@@ -1,19 +1,23 @@
-set nocompatible
-filetype off
+set showmatch
+" Cpp mappings
+set autoindent
+set smartindent
 
-" Setup Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+map <F2> :w <CR>
+set makeprg=g++\ -Wall\ -Wextra\ -W\ -Wformat\ -g\ %\ -o\ %<
+map <F3> :make <CR>
+imap <F3> <ESC>
+map <F4> :wq <CR>
+imap <F4> <ESC>
+map <F5> :vsp %<t <CR>
+map <F6> :!./%< <CR>
+map <F7> :!gdb %< <CR>
+map <F8> :!./%< < %<t <CR>
 
-" Manage bundles
-Bundle 'gmarik/vundle'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-powerline'
-
-" Misc
+:command Cpp r ~/Dropbox/c++/makra.cpp
+:command Tex r ~/Dropbox/Dokumenty/TeX/template.tex
+:command Py !python %
+:command Pdf !pdflatex %
 let mapleader=","      "Set the best leader
 set encoding=utf-8     "Set encoding
 set hidden             "Better buffer behavior
@@ -21,15 +25,14 @@ set hidden             "Better buffer behavior
 " Look and feel
 set number
 set ruler
-syntax on
 
 set laststatus=2       " Status bar
 
 " Whitespace stuff
 set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set list listchars=tab:\ \ ,trail:·
 
@@ -56,17 +59,10 @@ set backspace=indent,eol,start
 " Load the plugin and indent settings for the detected filetype
 filetype plugin indent on
 
-" Directories for swp files
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
 
 " Show (partial) command in the status line
 set showcmd
 
-" Escaping from insert mode
-inoremap jj <ESC>
-
-" FuzzyFinder configuration
-map <Leader>n :FufFileWithCurrentBufferDir<CR>
-map <Leader>b :FufBuffer<CR>
-map <Leader>t :FufBufferTag<CR>
+syntax enable
+set background=dark
+colorscheme distinguished
