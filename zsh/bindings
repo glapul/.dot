@@ -11,6 +11,7 @@ alias ..='cd ..'
 alias l="ls -F"
 alias ll="ls -lAh"
 alias la='ls -A'
+alias ls='ls --color=auto'
 
 # git
 alias s='git status -sb $argv; return 0'
