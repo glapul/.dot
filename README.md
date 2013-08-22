@@ -1,30 +1,26 @@
-.dotfiles aka config files
+Config files and installation script
 ==========================
 
-These are config files to set up a system the way I like it.
+Basic system setup. Installs:
+* vim
+* screen
+* zsh
+* google chrome (64bit)
+* pidgin
+* TexLive2013 (it takes ~3 hours)
+* python, pypy
+* ruby and rvm
+* nvm and node
+* heroku toolbelt
+* sublime_text
+* git_core, curl, wget and many others
 
 Installation
 ------------
 
 ```bash
-git clone git://github.com/sognat/.dot ~/.dot
-ln -s ~/.dot/gitignore ~/.gitignore
-ln -s ~/.dot/inputrc ~/.inputrc
-ln -s ~/.dot/irbrc ~/.irbrc
-ln -s ~/.dot/screenrc ~/.screenrc
-ln -s ~/.dot/vim ~/.vim
-ln -s ~/.dot/vim/vimrc ./.vimrc
-ln -s ~/.dot/zsh ~/.zsh
-ln -s ~/.dot/zsh/zshrc ~/.zshrc
-touch ~/.zshrc.local # you can place custom configuration here
+git clone git://github.com/glapul/.dot ~/.dot
+chmod +x ~/.dot/linux-config.sh
+sudo ~/.dot/linux-config.sh
 ```
 
-Environment
------------
-
-I am running on Mac OS X Terminal with zsh shell. If you like to switch
-from old bash, use the following command.
-
-```bash
-chsh -s /bin/zsh
-```
