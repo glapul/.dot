@@ -1,5 +1,6 @@
 set t_Co=256
 set showmatch
+set noswapfile
 " Cpp mappings
 set autoindent
 set smartindent
