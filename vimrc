@@ -67,5 +67,5 @@ set showcmd
 
 syntax enable
 set background=dark
-set g:solarized_termcolors=256
+let g:solarized_termcolors=256
 colorscheme distinguished
