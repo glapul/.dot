@@ -66,6 +66,6 @@ filetype plugin indent on
 set showcmd
 
 syntax enable
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
