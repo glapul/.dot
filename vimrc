@@ -1,3 +1,4 @@
+let g:solarized_termcolors=256
 set t_Co=256
 set showmatch
 set noswapfile
@@ -67,5 +68,4 @@ set showcmd
 
 syntax enable
 set background=light
-let g:solarized_termcolors=256
 colorscheme solarized
