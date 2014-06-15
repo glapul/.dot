@@ -4,6 +4,10 @@
 
 # Install basic stuff and symlink config files
 
+	sudo apt-add-repository ppa:fish-shell/release-2
+	sudo apt-get update
+	sudo apt-get install fish
+
 	sudo apt-get -y install  git-core pidgin  python ruby ruby-dev g++ zsh screen curl wget gnome-terminal pypy ttf-inconsolata libxss1 dropbox rlwrap build-essential cmake python-dev
 	
 	cd $HOME
@@ -35,4 +39,8 @@
 
 # texlive install (check version and shell)
 	cd $DOTPATH ; sudo ./texlive-install.sh
+
+# Dropbox install
+	cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+	~/.dropbox-dist/dropboxd
 

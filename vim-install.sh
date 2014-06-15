@@ -2,7 +2,7 @@
 
 # Symlink things
 	ln -s ~/.dot/vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
-	ln -s ~/.dot/vimrc ~/.vimrc
+	ln -s ~/.dot/vim/vimrc ~/.vimrc
 	ln -s ~/.dot/vim ~/.vim
 
 # install prerequisites
@@ -43,5 +43,5 @@
 	echo "cd ~/.vim/bundle/YouCompleteMe ; sudo ./install.sh --clang-completer"
 
 # clean
-cd ..
-sudo rm -R vim
+	cd ..
+	sudo rm -R vim
