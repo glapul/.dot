@@ -2,8 +2,8 @@
   excludesfile = ~/.gitignore
 
 [user]
-  name = 'Grzegorz Świrski'
-  email = 'sognat@gmail.com'
+  name = 'Michał Glapa'
+  email = 'michal.glapa@gmail.com'
 
 [color]
   ui = true

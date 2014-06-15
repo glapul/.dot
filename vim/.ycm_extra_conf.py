@@ -1,4 +1,4 @@
-# This file is NOT licensed under the GPLv3, which is the license for the rest
+s file is NOT licensed under the GPLv3, which is the license for the rest
 # of YouCompleteMe.
 #
 # Here's the license text for this file:
@@ -35,10 +35,10 @@ import ycm_core
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
 flags = [
-'-g',
 '-Wall',
 '-Wextra',
 '-Werror',
+'-Wc++98-compat',
 '-Wno-long-long',
 '-Wno-variadic-macros',
 '-fexceptions',
@@ -56,6 +56,36 @@ flags = [
 # For a C project, you would set this to 'c' instead of 'c++'.
 '-x',
 'c++',
+'-isystem',
+'../BoostParts',
+'-isystem',
+# This path will only work on OS X, but extra paths that don't exist are not
+# harmful
+'/System/Library/Frameworks/Python.framework/Headers',
+'-isystem',
+'../llvm/include',
+'-isystem',
+'../llvm/tools/clang/include',
+'-I',
+'.',
+'-I',
+'./ClangCompleter',
+'-isystem',
+'./tests/gmock/gtest',
+'-isystem',
+'./tests/gmock/gtest/include',
+'-isystem',
+'./tests/gmock',
+'-isystem',
+'./tests/gmock/include',
+'-isystem',
+'/usr/include',
+'-isystem',
+'/usr/local/include',
+'-isystem',
+'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1',
+'-isystem',
+'/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
 ]
 
 
@@ -157,3 +187,21 @@ def FlagsForFile( filename, **kwargs ):
     'flags': final_flags,
     'do_cache': True
   }
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+A
+B
+
