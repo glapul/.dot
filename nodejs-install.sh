@@ -1,3 +1,4 @@
+# Script broken 
 # This installs and configures nodejs
 
 cd $HOME
