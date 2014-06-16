@@ -21,6 +21,7 @@
 	ln -s ~/.dot/screenrc ~/.screenrc
 	ln -s ~/.dot/zsh ~/.zsh
 	ln -s ~/.dot/zsh/zshrc ~/.zshrc
+    ln -s ~/.dot/config.fish ~/.config/fish/config.fish
 	mkdir ~/Dropbox
 	mkdir ~/Dropbox/bin
 	ln -s ~/Dropbox/bin ~/bin
