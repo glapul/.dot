@@ -28,7 +28,7 @@ Bundle 'FuzzyFinder'
 " My Bundles
 Bundle 'Raimondi/delimitMate'
 Bundle 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf = '/home/michal/.vim/.ycm_extra_conf.py'
+    let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
 "Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -93,7 +93,7 @@ colorscheme molokai
 " Cpp mappings and other
 map <F2> :w <CR>
 imap <F2> <ESC> :w <CR>
-set makeprg=g++\ -Wall\ -std=c++0x\ -Wextra\ -W\ -Wformat\ -g\ %\ -o\ %<
+set makeprg=g++\ -Wall\ -std=c++0x\ -Wextra\ -W\ -Wno-return-type\ -Wformat\ -g\ %\ -o\ %<
 map <F3> :make <CR>
 imap <F3> <ESC> :make <CR>
 map <F4> :q <CR>
@@ -102,7 +102,7 @@ map <F5> :vsp %<t <CR>
 imap <F5> <ESC> :vsp %<t <CR>
 map <F6> :!./%< <CR>
 imap <F6> <ESC>:!./%< <CR>
-map <F7> :!gdb %< <CR>
+map <F7> :!gdb  %< <CR>
 imap <F7> <ESC>:!gdb %< <CR>
 map <F8> :!./%< < %<t <CR>
 imap <F8> <ESC>:!./%< < %<t <CR>
@@ -114,3 +114,4 @@ nnoremap <Leader>f :FufFile <CR>
 :command Py !python %
 :command Pdf !pdflatex %
 :command Build !g++ -Wall -Wextra -W -Wformat -g % -o %<
+    let g:ycm_global_ycm_extra_conf = '/home/glapul/.vim/.ycm_extra_conf.py'

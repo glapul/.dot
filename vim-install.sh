@@ -1,7 +1,6 @@
 # This installs current vim version
 
 # Symlink things
-	ln -s ~/.dot/vim/.ycm_extra_conf.py ~/.ycm_extra_conf.py
 	ln -s ~/.dot/vim/vimrc ~/.vimrc
 	ln -s ~/.dot/vim ~/.vim
 
