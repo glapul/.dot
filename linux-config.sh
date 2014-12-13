@@ -22,8 +22,6 @@
 	ln -s ~/.dot/zsh ~/.zsh
 	ln -s ~/.dot/zsh/zshrc ~/.zshrc
     ln -s ~/.dot/config.fish ~/.config/fish/config.fish
-    ln -s ~/.dot/satori.cfg ~/.satori.cfg
-    echo "Uzupelnic haslo w sator.cfg"
     ln -s ~/.dot/fish_functions ~/.config/fish/functions
 	mkdir ~/Dropbox
 	mkdir ~/Dropbox/bin

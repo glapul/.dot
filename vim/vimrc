@@ -3,7 +3,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
-Bundle 'gmarik/vundle'
+" Bundle 'gmarik/vundle'
 
 " Bundle help
 " The following are examples of different formats supported.
@@ -33,6 +33,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
+Bundle 'oblitum/rainbow'
 
 filetype plugin indent on     " required
 
@@ -88,7 +89,7 @@ set showcmd
 let g:solarized_termcolors=256
 set t_Co=256
 syntax enable
-set background=light
+set background=dark
 colorscheme molokai
 " Cpp mappings and other
 map <F2> :w <CR>
@@ -115,3 +116,6 @@ nnoremap <Leader>f :FufFile <CR>
 :command Pdf !pdflatex %
 :command Build !g++ -Wall -Wextra -W -Wformat -g % -o %<
     let g:ycm_global_ycm_extra_conf = '/home/glapul/.vim/.ycm_extra_conf.py'
+autocmd VimEnter * RainbowLoad
+
+
