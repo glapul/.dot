@@ -1,4 +1,5 @@
 " Vundle config - DO NOT TOUCH
+set shell=/bin/bash
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -28,12 +29,22 @@ Bundle 'FuzzyFinder'
 " My Bundles
 Bundle 'Raimondi/delimitMate'
 Bundle 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
 "Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+    autocmd VimEnter * NERDTree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 Bundle 'majutsushi/tagbar'
 Bundle 'oblitum/rainbow'
+Bundle 'bling/vim-airline'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#fnamemod = ':t'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'SirVer/ultisnips'
+Bundle 'flazz/vim-colorschemes'
+"Bundle 'edkolev/promptline.vim'
+Bundle 'honza/vim-snippets'
+
 
 filetype plugin indent on     " required
 
@@ -44,10 +55,13 @@ set hidden             "Better buffer behavior
 
 " Look and feel
 set number
-set showmatch
 set ruler
 
 set laststatus=2       " Status bar
+
+let g:ycm_autoclose_preview_window_after_completion = 1
+"let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 1 "change to 0
 
 " Whitespace stuff
 set nowrap
@@ -115,7 +129,43 @@ nnoremap <Leader>f :FufFile <CR>
 :command Py !python %
 :command Pdf !pdflatex %
 :command Build !g++ -Wall -Wextra -W -Wformat -g % -o %<
-    let g:ycm_global_ycm_extra_conf = '/home/glapul/.vim/.ycm_extra_conf.py'
-autocmd VimEnter * RainbowLoad
+let loaded_matchparen = 1
+autocmd VimEnter * AirlineTheme zenburn
+map <F9> :bprev <CR>
+map <F10> :bnext <CR>
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
+
+let g:ConqueTerm_TERM = 'xterm-256color'
+let g:ConqueTerm_Color = 1
 
 
+
+"they say it fixes ultisnips problem
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+               return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
+" this mapping Enter key to <C-y> to chose the current highlight item
+" and close the selection list, same as other IDEs.
+" CONFLICT with some plugins like tpope/Endwise
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+autocmd BufEnter * RainbowLoad
+:set mouse=a
