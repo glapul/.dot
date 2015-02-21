@@ -7,7 +7,8 @@
 # install prerequisites
 	sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
 	libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
-	libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial
+	libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev ruby-dev mercurial \
+    libclang-dev
 
 # remove old vim if installed
 	sudo apt-get remove vim vim-runtime gvim
@@ -35,7 +36,7 @@
 	sudo update-alternatives --set vi /usr/bin/vim
 
 # Vundle installation
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Print message
 	echo "Remember to recompile YCM and install bundles"
